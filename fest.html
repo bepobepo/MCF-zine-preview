@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="day">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mooncow Fest 2026 — 5–7 June, East Sussex</title>
+  <meta name="description" content="A small, handmade gathering on the South Downs. 5–7 June 2026." />
+  <meta name="theme-color" content="#fdf3d3" data-mode-theme-color>
+  <meta name="color-scheme" content="light dark">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" data-ios-status-bar-style>
+  <link rel="icon" href="assets/favicon.png?v=apple-emoji-safe-2" type="image/png">
+  <script>
+    (function () {
+      var mode = "day";
+      var colors = { day: "#fdf3d3", night: "#160b34" };
+      try {
+        var stored = localStorage.getItem("mooncow-mode");
+        if (stored === "day" || stored === "night") {
+          mode = stored;
+        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          mode = "night";
+        }
+      } catch (error) {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) mode = "night";
+      }
+      document.documentElement.classList.remove("day", "night");
+      document.documentElement.classList.add(mode);
+      document.documentElement.style.backgroundColor = colors[mode];
+      var themeMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeMeta) themeMeta.setAttribute("content", colors[mode]);
+      var iosMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+      if (iosMeta) iosMeta.setAttribute("content", mode === "night" ? "black-translucent" : "default");
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="assets/styles.css" as="style">
+  <link rel="preload" href="https://fonts.gstatic.com/s/caprasimo/v6/esDT31JQOPuXIUGBp72Ukp8D.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZOIHQ.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9H6as8bTXq_nANBjzKo3IeZx8z6up5BeSl5jBNz_19PpbpMXuECpwUxJBOm_OJWiawA1Xp.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjg.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/instrumentserif/v5/jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjjH7M.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2" as="font" type="font/woff2" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Bricolage+Grotesque:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body id="top">
+  <header class="site-header" data-site-header>
+    <div class="header-inner">
+      <div class="brand-group">
+        <button class="mode-toggle" type="button" aria-label="Switch to night" aria-pressed="false" data-mode-toggle>
+          <span class="mode-toggle__knob" aria-hidden="true"><img class="emoji-img" src="assets/emoji/webp/sun.webp?v=apple-emoji-safe-2" alt=""></span>
+        </button>
+        <a href="#top" class="wordmark">Mooncow&nbsp;Fest</a>
+      </div>
+
+      <nav class="desktop-nav" aria-label="Primary">
+        <a href="#post-event">2026 photos</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#music">Music</a>
+        <a href="#tiers">Tiers</a>
+        <a href="#join">2027</a>
+        <a href="cowzine.html">CowZine</a>
+      </nav>
+
+      <div class="header-actions">
+        <span class="dates-pill dates-pill--done">5–7 June 2026 · it happened!</span>
+        <a href="#post-event" class="small-cta">See the photos ↓</a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
+          <span class="menu-toggle__bar" aria-hidden="true"></span>
+          <span class="menu-toggle__bar" aria-hidden="true"></span>
+          <span class="menu-toggle__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile primary" data-mobile-nav>
+      <a href="#post-event">2026 photos</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#music">Music</a>
+      <a href="#land">The land</a>
+      <a href="#tiers">Tiers</a>
+      <a href="#join">2027</a>
+      <a href="cowzine.html">CowZine</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="sky" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="disco-moon" data-disco-moon></div>
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="stars" data-stars></div>
+        <div class="light-beams"></div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow"><span>5 — 7 June 2026</span><span class="hero-eyebrow__separator"> · </span><span>The South Downs</span></p>
+        <h1 id="hero-title"><span>Mooncow</span> <span>Fest!</span></h1>
+        <p class="hero-lede">It happened. Three days in a field on the South Downs — and it was everything.<br><em>See you next year.</em></p>
+        <div class="hero-actions">
+          <a href="#post-event" class="button button-primary">See the photos <span aria-hidden="true">↓</span></a>
+          <a href="#about" class="button button-secondary">What is this? ↓</a>
+        </div>
+      </div>
+
+      <div class="field-cast" aria-hidden="true">
+        <span class="actor tree tree-left mc-bob"><img class="emoji-img" src="assets/emoji/webp/tree.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor tent tent-left"><img class="emoji-img" src="assets/emoji/webp/tent.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor camp"><img class="emoji-img" src="assets/emoji/webp/camping.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor flower flower-left"><img class="emoji-img" src="assets/emoji/webp/blossom.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor fire mc-flicker"><img class="emoji-img" src="assets/emoji/webp/fire.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor dancer dancer-left mc-shimmy"><img class="emoji-img" src="assets/emoji/webp/man_dancing.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor dancer dancer-right mc-shimmy"><img class="emoji-img" src="assets/emoji/webp/woman_dancing.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor night-extra disco-disc mc-spin"><img class="emoji-img" src="assets/emoji/webp/cd.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor night-extra headphones mc-bob"><img class="emoji-img" src="assets/emoji/webp/headphones.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor night-extra field-trumpet mc-drift"><img class="emoji-img" src="assets/emoji/webp/trumpet.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor night-extra field-banjo mc-drift"><img class="emoji-img" src="assets/emoji/webp/banjo.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor night-extra music-note-a mc-drift"><img class="emoji-img" src="assets/emoji/webp/musical_notes.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor night-extra music-note-b mc-drift"><img class="emoji-img" src="assets/emoji/webp/musical_note.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor night-extra tiny-disco mc-spin"><img class="emoji-img" src="assets/emoji/webp/disco_ball.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor cow cow-left"><img class="emoji-img" src="assets/emoji/webp/cow.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor cow cow-right"><img class="emoji-img" src="assets/emoji/webp/cow.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor tree tree-right mc-bob"><img class="emoji-img" src="assets/emoji/webp/tree.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor tent tent-right"><img class="emoji-img" src="assets/emoji/webp/tent.webp?v=apple-emoji-safe-2" alt=""></span>
+        <span class="actor flower flower-right"><img class="emoji-img" src="assets/emoji/webp/cherry_blossom.webp?v=apple-emoji-safe-2" alt=""></span>
+      </div>
+
+      <svg class="hills" viewBox="0 0 1280 220" preserveAspectRatio="none" aria-hidden="true">
+        <path class="hill-front" d="M0,170 C200,84 360,190 560,128 C760,62 920,190 1120,118 C1200,88 1240,106 1280,96 L1280,220 L0,220 Z" />
+        <path class="hill-back" d="M0,190 C160,148 380,210 600,170 C820,126 980,210 1280,170 L1280,220 L0,220 Z" />
+      </svg>
+    </section>
+
+    <section class="section post-event-section" id="post-event">
+      <div class="section-intro split-intro">
+        <div>
+          <p class="eyebrow">~ mooncow fest 2026 ~</p>
+          <h2 class="display-heading">It happened.<br><em>Here's proof.</em></h2>
+        </div>
+        <p>Three days, a field, and a lot of very good people. Photos and clips from the weekend.</p>
+      </div>
+
+      <div class="carousel-wrapper" aria-label="Post-event photos and videos">
+        <div class="carousel" id="post-event-carousel">
+          <figure class="carousel-slide">
+            <img
+              src="photos/post-event/pe-03-fire-pit-960.webp"
+              srcset="photos/post-event/pe-03-fire-pit-480.webp 480w, photos/post-event/pe-03-fire-pit-960.webp 960w"
+              sizes="(max-width: 640px) 90vw, 68vw"
+              alt="Fire pit at Mooncow Fest 2026"
+              loading="lazy" decoding="async">
+            <figcaption>Fire pit</figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img
+              src="photos/post-event/pe-01-art-again-960.webp"
+              srcset="photos/post-event/pe-01-art-again-480.webp 480w, photos/post-event/pe-01-art-again-960.webp 960w"
+              sizes="(max-width: 640px) 90vw, 68vw"
+              alt="Art installation at Mooncow Fest 2026"
+              loading="lazy" decoding="async">
+            <figcaption>Art</figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img
+              src="photos/post-event/pe-02-art-people-960.webp"
+              srcset="photos/post-event/pe-02-art-people-480.webp 480w, photos/post-event/pe-02-art-people-960.webp 960w"
+              sizes="(max-width: 640px) 90vw, 68vw"
+              alt="Art and people at Mooncow Fest 2026"
+              loading="lazy" decoding="async">
+            <figcaption>Art and people</figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img
+              src="photos/post-event/pe-04-olfactory-960.webp"
+              srcset="photos/post-event/pe-04-olfactory-480.webp 480w, photos/post-event/pe-04-olfactory-960.webp 960w"
+              sizes="(max-width: 640px) 90vw, 68vw"
+              alt="Olfactory experience installation"
+              loading="lazy" decoding="async">
+            <figcaption>Olfactory experience</figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img
+              src="photos/post-event/pe-05-shed-960.webp"
+              srcset="photos/post-event/pe-05-shed-480.webp 480w, photos/post-event/pe-05-shed-960.webp 960w"
+              sizes="(max-width: 640px) 90vw, 68vw"
+              alt="The shed on a rainy day at Mooncow Fest 2026"
+              loading="lazy" decoding="async">
+            <figcaption>Shelter from the rain</figcaption>
+          </figure>
+          <figure class="carousel-slide carousel-slide--video">
+            <video src="photos/post-event/pe-06-vinyl-set-720.mp4" muted loop playsinline preload="metadata" controls></video>
+            <figcaption>Vinyl set</figcaption>
+          </figure>
+          <figure class="carousel-slide carousel-slide--video">
+            <video src="photos/post-event/pe-07-baby-moo-720.mp4" muted loop playsinline preload="metadata" controls></video>
+            <figcaption>Baby Moo set</figcaption>
+          </figure>
+        </div>
+        <div class="carousel-controls" aria-label="Carousel navigation">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide" data-carousel-prev="post-event-carousel">&#8592;</button>
+          <div class="carousel-dots" data-carousel-dots="post-event-carousel" aria-hidden="true"></div>
+          <button class="carousel-btn carousel-btn--next" aria-label="Next slide" data-carousel-next="post-event-carousel">&#8594;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow">A weekend in a field, co-created.</p>
+          <h2 class="display-heading"><span class="display-line display-line--plain">A weekend</span><br><em class="display-line">in a field,</em><br><span class="display-line">co-created.</span></h2>
+        </div>
+        <div class="body-copy">
+          <p class="lead-copy">Mooncow Fest is a communal festival (gathering?) of around 80–150 friends, friends-of-friends, and lovely strangers — pitched on a working farm in East Sussex. There are no headliners, no wristbands, no sponsors. Just people, fields, fire, music, food cooked together, and the occasional cow.</p>
+          <p>The event is co-created by the participants. Bring yourself, bring your ideas, your music, and anything you'd like to share — a workshop, a talk, a DJ set, food, anything!</p>
+          <p>We've been doing this since 2020. Each year is a little different. The shape comes from the people who show up.</p>
+        </div>
+      </div>
+      <div class="stat-grid" aria-label="Mooncow Fest facts">
+        <div class="stat-card"><span class="stat-card__icon" aria-hidden="true"><span><img class="emoji-img" src="assets/emoji/webp/cow.webp?v=apple-emoji-safe-2" alt=""></span></span><strong>80–150</strong><span>humans in the field</span></div>
+        <div class="stat-card"><span class="stat-card__icon" aria-hidden="true"><span><img class="emoji-img" src="assets/emoji/webp/crescent_moon.webp?v=apple-emoji-safe-2" alt=""></span></span><strong>2 nights</strong><span>Fri → Sun</span></div>
+        <div class="stat-card"><span class="stat-card__icon" aria-hidden="true"><span><img class="emoji-img" src="assets/emoji/webp/disco_ball.webp?v=apple-emoji-safe-2" alt=""></span></span><strong>0</strong><span>headliners, wristbands, sponsors</span></div>
+        <div class="stat-card"><span class="stat-card__icon" aria-hidden="true"><span><img class="emoji-img" src="assets/emoji/webp/seedling.webp?v=apple-emoji-safe-2" alt=""></span></span><strong>since 2020</strong><span>each year a little different</span></div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery">
+      <div class="section-intro split-intro">
+        <div>
+          <p class="eyebrow">~ scenes from past years ~</p>
+          <h2 class="display-heading">What it looks <em>like.</em></h2>
+        </div>
+        <p>Cows, fields, fire, dancing, art, and the occasional naked trampoline.</p>
+      </div>
+
+      <div class="polaroid-grid">
+        <figure class="polaroid"><img src="photos/optimized/01-dancing-720.webp" srcset="photos/optimized/01-dancing-480.webp 480w, photos/optimized/01-dancing-720.webp 720w, photos/optimized/01-dancing-960.webp 960w, photos/optimized/01-dancing-1440.webp 1440w" sizes="(max-width: 640px) 88vw, (max-width: 1060px) 30vw, 22vw" alt="Dancing at Mooncow Fest" loading="lazy" decoding="async"><figcaption>Dancing</figcaption></figure>
+        <figure class="polaroid"><img src="photos/optimized/02-art-720.webp" srcset="photos/optimized/02-art-480.webp 480w, photos/optimized/02-art-720.webp 720w, photos/optimized/02-art-960.webp 960w, photos/optimized/02-art-1440.webp 1440w" sizes="(max-width: 640px) 88vw, (max-width: 1060px) 30vw, 22vw" alt="Art at Mooncow Fest" loading="lazy" decoding="async"><figcaption>Art</figcaption></figure>
+        <figure class="polaroid"><video src="photos/optimized/03-dance-720.mp4" muted loop playsinline preload="metadata" controls></video><figcaption>Dance (clip)</figcaption></figure>
+        <figure class="polaroid"><video src="photos/optimized/04-dance-720.mp4" muted loop playsinline preload="metadata" controls></video><figcaption>Dance (clip)</figcaption></figure>
+        <figure class="polaroid"><img src="photos/optimized/05-cow-walk-720.webp" srcset="photos/optimized/05-cow-walk-480.webp 480w, photos/optimized/05-cow-walk-720.webp 720w, photos/optimized/05-cow-walk-960.webp 960w, photos/optimized/05-cow-walk-1440.webp 1440w" sizes="(max-width: 640px) 88vw, (max-width: 1060px) 30vw, 22vw" alt="A cow walk near the festival field" loading="lazy" decoding="async"><figcaption>Cow walk</figcaption></figure>
+        <figure class="polaroid"><img src="photos/optimized/06-scene-720.webp" srcset="photos/optimized/06-scene-480.webp 480w, photos/optimized/06-scene-720.webp 720w, photos/optimized/06-scene-960.webp 960w, photos/optimized/06-scene-1440.webp 1440w" sizes="(max-width: 640px) 88vw, (max-width: 1060px) 30vw, 22vw" alt="Festival scene in the field" loading="lazy" decoding="async"><figcaption>Festival scene</figcaption></figure>
+        <figure class="polaroid"><img src="photos/optimized/07-cows-720.webp" srcset="photos/optimized/07-cows-480.webp 480w, photos/optimized/07-cows-720.webp 720w, photos/optimized/07-cows-960.webp 960w, photos/optimized/07-cows-1440.webp 1440w" sizes="(max-width: 640px) 88vw, (max-width: 1060px) 30vw, 22vw" alt="Cows near Mooncow Fest" loading="lazy" decoding="async"><figcaption>Cows</figcaption></figure>
+        <figure class="polaroid"><img src="photos/optimized/08-fire-720.webp" srcset="photos/optimized/08-fire-480.webp 480w, photos/optimized/08-fire-720.webp 720w, photos/optimized/08-fire-960.webp 960w, photos/optimized/08-fire-1440.webp 1440w" sizes="(max-width: 640px) 88vw, (max-width: 1060px) 30vw, 22vw" alt="Fire at night" loading="lazy" decoding="async"><figcaption>Fire</figcaption></figure>
+        <figure class="polaroid"><img src="photos/optimized/09-art-2-720.webp" srcset="photos/optimized/09-art-2-480.webp 480w, photos/optimized/09-art-2-720.webp 720w, photos/optimized/09-art-2-960.webp 960w, photos/optimized/09-art-2-1440.webp 1440w" sizes="(max-width: 640px) 88vw, (max-width: 1060px) 30vw, 22vw" alt="More festival art" loading="lazy" decoding="async"><figcaption>Art</figcaption></figure>
+        <figure class="polaroid"><img src="photos/optimized/10-space-720.webp" srcset="photos/optimized/10-space-480.webp 480w, photos/optimized/10-space-720.webp 720w, photos/optimized/10-space-960.webp 960w, photos/optimized/10-space-1440.webp 1440w" sizes="(max-width: 640px) 88vw, (max-width: 1060px) 30vw, 22vw" alt="The festival space by day" loading="lazy" decoding="async"><figcaption>Space</figcaption></figure>
+        <figure class="polaroid"><img src="photos/optimized/11-space-night-720.webp" srcset="photos/optimized/11-space-night-480.webp 480w, photos/optimized/11-space-night-720.webp 720w, photos/optimized/11-space-night-960.webp 960w, photos/optimized/11-space-night-1440.webp 1440w" sizes="(max-width: 640px) 88vw, (max-width: 1060px) 30vw, 22vw" alt="The festival space at night" loading="lazy" decoding="async"><figcaption>Space at night</figcaption></figure>
+        <figure class="polaroid"><img src="photos/optimized/12-food-720.webp" srcset="photos/optimized/12-food-480.webp 480w, photos/optimized/12-food-720.webp 720w, photos/optimized/12-food-960.webp 960w, photos/optimized/12-food-1440.webp 1440w" sizes="(max-width: 640px) 88vw, (max-width: 1060px) 30vw, 22vw" alt="Food shared at Mooncow Fest" loading="lazy" decoding="async"><figcaption>Food</figcaption></figure>
+      </div>
+
+      <div class="wide-media-grid">
+        <figure><img src="photos/optimized/13-mooncows-960.webp" srcset="photos/optimized/13-mooncows-480.webp 480w, photos/optimized/13-mooncows-720.webp 720w, photos/optimized/13-mooncows-960.webp 960w, photos/optimized/13-mooncows-1440.webp 1440w" sizes="(max-width: 760px) 92vw, 44vw" alt="Mooncows gathered together" loading="lazy" decoding="async"><figcaption>Mooncows</figcaption></figure>
+        <figure><video src="photos/optimized/14-ivan-play-720.mp4" muted loop playsinline preload="metadata" controls></video><figcaption>Ivan plays</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section music-section" id="music">
+      <div class="music-inner">
+        <div class="disco-mark mc-spin" aria-hidden="true"><img class="emoji-img" src="assets/emoji/webp/disco_ball.webp?v=apple-emoji-safe-2" alt=""></div>
+        <p class="eyebrow">~ the music ~</p>
+        <h2 class="display-heading">Who played?<br><em>The herd did.</em></h2>
+        <p>Mooncow doesn't book headliners — the lineup comes from whoever brings their decks, their tracks, or their voice. 2026 was no different. Here's a taste of past sets from the herd:</p>
+        <p>Want to be part of 2027? Drop us a line at <a href="mailto:theherd@moonco.ws">theherd@moonco.ws</a>.</p>
+
+        <div class="soundcloud-embed" data-soundcloud-embed>
+          <iframe
+            width="100%"
+            height="560"
+            scrolling="no"
+            allow="autoplay"
+            title="Mooncows &amp; Friends Nowhere 2024 — SoundCloud playlist"
+            loading="lazy"
+            data-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/apsara_music/sets/mooncows-friends-nowhere-2024&color=%23ff3ea6&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section land-section" id="land">
+      <div class="land-grid">
+        <div>
+          <p class="eyebrow">~ the land ~</p>
+          <h2 class="display-heading">Rolling hills,<br>a quiet farm,<br><em>big skies.</em></h2>
+          <p>We pitch up at <strong>Great Danegate Farm</strong>, near Eridge Green in East Sussex — about an hour by train from London Bridge to Tunbridge Wells, then a short hop. There's space to camp, a kitchen tent, a fire, a dance tent, and a lot of green.</p>
+          <p>Getting there by car, public transport, or carpool. We'll coordinate lifts in the run-up — let us know on the sign-up form if you'd like a seat, or have one to offer.</p>
+          <div class="chip-row" aria-label="Site features">
+            <span><img class="emoji-img" src="assets/emoji/webp/camping.webp?v=apple-emoji-safe-2" alt="" aria-hidden="true"> camping</span>
+            <span><img class="emoji-img" src="assets/emoji/webp/frying_pan.webp?v=apple-emoji-safe-2" alt="" aria-hidden="true"> kitchen tent</span>
+            <span><img class="emoji-img" src="assets/emoji/webp/fire.webp?v=apple-emoji-safe-2" alt="" aria-hidden="true"> fire</span>
+            <span><img class="emoji-img" src="assets/emoji/webp/cd.webp?v=apple-emoji-safe-2" alt="" aria-hidden="true"> dance tent</span>
+            <span><img class="emoji-img" src="assets/emoji/webp/herb.webp?v=apple-emoji-safe-2" alt="" aria-hidden="true"> a lot of green</span>
+          </div>
+        </div>
+
+        <article class="address-card">
+          <p class="eyebrow">The address</p>
+          <h3>Farm Near Tunbridge Wells</h3>
+          <p>Eridge Green, Rotherfield<br>East Sussex</p>
+          <p class="postcode">TN3 Area</p>
+          <div class="map-illustration" aria-hidden="true">
+            <svg viewBox="0 0 400 250" preserveAspectRatio="none">
+              <path class="map-hill map-hill-top" d="M0,80 Q120,40 220,70 T400,90 L400,0 L0,0 Z" />
+              <path class="map-hill map-hill-bottom" d="M0,180 Q150,150 260,180 T400,160 L400,250 L0,250 Z" />
+              <path class="map-path" d="M0,130 C100,110 200,160 300,130 S400,120 400,120" />
+              <circle class="map-pin" cx="240" cy="125" r="14" />
+              <image href="assets/emoji/webp/cow.webp?v=apple-emoji-safe-2" x="231" y="116" width="18" height="18" />
+              <text x="260" y="105" class="map-label">YOU ARE HERE</text>
+            </svg>
+          </div>
+          <a href="https://maps.app.goo.gl/88bnJA3Nh8zz19N46" class="map-button" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tiers-section" id="tiers">
+      <div class="section-intro centered">
+        <p class="eyebrow">~ how it's funded ~</p>
+        <h2 class="display-heading">Three cow tiers.<br><em>Pick what fits.</em></h2>
+        <p>Mooncow runs on what people pitch in. We don't profit — fees cover the land, food, equipment, and the bits and pieces that make a field into a festival. Choose the tier that sits right with your budget.</p>
+      </div>
+
+      <div class="tier-grid">
+        <a class="tier-card" href="https://docs.google.com/forms/d/e/1FAIpQLSd69E0QQ2p3h2pvLZ8PrGn2_myqukXd_ZfObHMk71Am43xjNg/viewform" target="_blank" rel="noopener" aria-label="Choose the Restricted budget tier and open the signup form">
+          <div class="tier-icon mc-bob"><img class="emoji-img" src="assets/emoji/webp/seedling.webp?v=apple-emoji-safe-2" alt=""></div>
+          <p class="eyebrow">For tighter months</p>
+          <h3>Restricted budget</h3>
+          <strong>£75</strong>
+          <p>No questions asked. Same festival, same welcome.</p>
+          <span class="tier-card__cta">Choose this tier ↗</span>
+        </a>
+        <a class="tier-card" href="https://docs.google.com/forms/d/e/1FAIpQLSd69E0QQ2p3h2pvLZ8PrGn2_myqukXd_ZfObHMk71Am43xjNg/viewform" target="_blank" rel="noopener" aria-label="Choose the Base fee tier and open the signup form">
+          <div class="tier-icon mc-bounce"><img class="emoji-img" src="assets/emoji/webp/cow.webp?v=apple-emoji-safe-2" alt=""></div>
+          <p class="eyebrow">The standard contribution</p>
+          <h3>Base fee</h3>
+          <strong>£95</strong>
+          <p>Covers your share of the weekend.</p>
+          <span class="tier-card__cta">Choose this tier ↗</span>
+        </a>
+        <a class="tier-card" href="https://docs.google.com/forms/d/e/1FAIpQLSd69E0QQ2p3h2pvLZ8PrGn2_myqukXd_ZfObHMk71Am43xjNg/viewform" target="_blank" rel="noopener" aria-label="Choose the Beyond-cow tier and open the signup form">
+          <div class="tier-icon mc-spin"><img class="emoji-img" src="assets/emoji/webp/moon_face.webp?v=apple-emoji-safe-2" alt=""></div>
+          <p class="eyebrow">If you can give a bit more</p>
+          <h3>Beyond-cow</h3>
+          <strong>£125</strong>
+          <p>Helps us keep the lower tier open for others.</p>
+          <span class="tier-card__cta">Choose this tier ↗</span>
+        </a>
+      </div>
+      <p class="tiers-note"><strong>One day, one night?</strong> £55. Bank details and payment info are shared once you've joined the herd.</p>
+    </section>
+
+    <section class="section pack-section" id="pack">
+      <div class="pack-grid">
+        <div class="pack-intro">
+          <p class="eyebrow">~ pack list ~</p>
+          <h2 class="display-heading">What to <em>bring.</em></h2>
+          <p>A rough kit for a comfortable weekend. Once you've signed up, we'll share the full list and the shared kitchen / equipment sign-up.</p>
+          <p class="pack-badge"><img class="emoji-img" src="assets/emoji/webp/backpack.webp?v=apple-emoji-safe-2" alt="" aria-hidden="true"> 14 items · &lt; 25kg</p>
+        </div>
+        <ol class="pack-list">
+          <li><span>Tent + sleeping bag (10°C-rated)</span></li>
+          <li><span>Sleeping mat for under your bag</span></li>
+          <li><span>Layers — it gets cold at night</span></li>
+          <li><span>Waterproof jacket</span></li>
+          <li><span>Hiking boots or wellies</span></li>
+          <li><span>Headtorch (better than a regular torch)</span></li>
+          <li><span>Water bottle + 5L spare</span></li>
+          <li><span>Cup, plate, cutlery</span></li>
+          <li><span>Towel + biodegradable shower gel</span></li>
+          <li><span>Swimwear</span></li>
+          <li><span>Toilet paper</span></li>
+          <li><span>Mosquito repellent</span></li>
+          <li><span>Charged power banks</span></li>
+          <li><span>Snacks to share</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section join-section" id="join">
+      <div class="join-content">
+        <p class="eyebrow">~ until next time ~</p>
+        <h2 class="display-heading">See you<br><em>in 2027.</em></h2>
+        <p>Mooncow 2026 is done. It was three days of fields, fire, music, and friends. If you were there — thank you. If you missed it — stay close.</p>
+        <a href="mailto:theherd@moonco.ws" class="join-button"><span class="mc-bounce" aria-hidden="true"><img class="emoji-img" src="assets/emoji/webp/cow.webp?v=apple-emoji-safe-2" alt=""></span> Get in touch for 2027 ↗</a>
+        <p class="question-link">Or write for <a href="cowzine.html">CowZine</a> in the meantime <img class="emoji-img" src="assets/emoji/webp/cow.webp?v=apple-emoji-safe-2" alt="" aria-hidden="true"></p>
+      </div>
+      <div class="disco-scene" aria-hidden="true" data-disco-scene></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="mc-bob" aria-hidden="true"><img class="emoji-img" src="assets/emoji/webp/moon_face.webp?v=apple-emoji-safe-2" alt=""></div>
+    <p>Mooncow Fest 2026 — it happened. Made by the herd, for the herd.</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

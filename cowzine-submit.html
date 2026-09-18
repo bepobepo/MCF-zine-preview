@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CowZine — open call for submissions</title>
+  <meta name="description" content="CowZine is a community zine in the making. Open call for submissions: personals, opinion pieces, sketches, puzzles, reviews, travel, news, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Caveat:wght@400;600&family=Inter:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f7eedd;
+      --cream-deep: #efe2c8;
+      --paper: #fbf5e8;
+      --ink: #2c1f24;
+      --ink-soft: #5a4750;
+      --terracotta: #c95746;
+      --terracotta-deep: #a8412f;
+      --rose: #e09aa6;
+      --sage: #8a9a7b;
+      --plum: #6b3a4f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 17px;
+      overflow-x: hidden;
+    }
+
+    /* Faint halftone dot texture — the zine's visual signature */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(44, 31, 36, 0.13) 1px, transparent 0);
+      background-size: 10px 10px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* Header */
+    header {
+      position: sticky; top: 0;
+      z-index: 100;
+      background: rgba(251, 245, 232, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(44, 31, 36, 0.1);
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-family: 'Special Elite', 'Courier New', monospace;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .nav-cta {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--terracotta); transform: translateY(-1px); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 1.5rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero .eyebrow {
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+      color: var(--terracotta);
+      transform: rotate(-1.5deg);
+      display: inline-block;
+      margin-bottom: 0.6rem;
+    }
+
+    .mast {
+      font-family: 'Special Elite', 'Courier New', monospace;
+      font-size: clamp(3.5rem, 12vw, 7rem);
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      color: var(--ink);
+      display: inline-block;
+      padding: 0.25em 0.4em;
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: 8px;
+      box-shadow: 10px 10px 0 var(--terracotta);
+      margin-bottom: 2rem;
+      transform: rotate(-1deg);
+    }
+    .mast .bang { color: var(--terracotta); display: inline-block; transform-origin: bottom center; animation: wiggle 4s ease-in-out infinite; }
+    @keyframes wiggle {
+      0%, 92%, 100% { transform: rotate(0); }
+      94% { transform: rotate(-5deg); }
+      96% { transform: rotate(5deg); }
+      98% { transform: rotate(-3deg); }
+    }
+    @media (prefers-reduced-motion: reduce) { .mast .bang { animation: none; } }
+
+    .hero-lead {
+      font-size: 1.25rem;
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    /* Sections */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: var(--terracotta);
+      transform: rotate(-1deg);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      max-width: 720px;
+    }
+
+    p { margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .lead {
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      max-width: 720px;
+      line-height: 1.55;
+    }
+
+    /* About */
+    .about {
+      background: var(--cream);
+      max-width: none;
+      padding: 4rem 1.5rem;
+    }
+    .about-inner { max-width: 880px; margin: 0 auto; }
+
+    /* Call cards */
+    .call {
+      padding: 5rem 1.5rem;
+    }
+    .call-inner { max-width: 1000px; margin: 0 auto; }
+
+    .call-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .pitch {
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      border-radius: 10px;
+      padding: 1.4rem 1.3rem;
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .pitch:nth-child(odd)  { transform: rotate(-0.7deg); }
+    .pitch:nth-child(even) { transform: rotate(0.6deg); }
+    .pitch:nth-child(3n)   { transform: rotate(-1.1deg); }
+    .pitch:hover {
+      transform: rotate(0) translateY(-4px);
+      box-shadow: 6px 6px 0 var(--terracotta);
+    }
+
+    .pitch-stamp {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.4rem;
+    }
+
+    .pitch-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      line-height: 1.1;
+    }
+
+    .pitch-desc {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    /* No-pressure + deadlines */
+    .ease {
+      background: var(--cream);
+      max-width: none;
+      padding: 4.5rem 1.5rem;
+    }
+    .ease-inner { max-width: 880px; margin: 0 auto; }
+
+    .reassure {
+      background: var(--paper);
+      border: 2px dashed var(--terracotta);
+      border-radius: 12px;
+      padding: 1.6rem 1.8rem;
+      transform: rotate(-0.5deg);
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+    }
+    .reassure strong { color: var(--ink); }
+
+    .deadlines {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+    .deadline {
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      border-radius: 10px;
+      padding: 1.5rem 1.4rem;
+      position: relative;
+    }
+    .deadline:nth-child(odd)  { transform: rotate(-0.6deg); }
+    .deadline:nth-child(even) { transform: rotate(0.6deg); }
+    .deadline-stamp {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.4rem;
+    }
+    .deadline-date {
+      font-family: 'Fraunces', serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .deadline-desc {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    /* Submit section */
+    .submit {
+      background: var(--ink);
+      color: var(--paper);
+      max-width: none;
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+    .submit-inner { max-width: 640px; margin: 0 auto; }
+    .submit h2 { color: var(--paper); margin: 0 auto 1.5rem; }
+    .submit .lead { color: rgba(247, 238, 221, 0.85); margin: 0 auto 2rem; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+    .btn-primary {
+      background: var(--terracotta);
+      color: var(--paper);
+    }
+    .btn-primary:hover {
+      background: var(--rose);
+      color: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--paper);
+      border: 2px solid rgba(247, 238, 221, 0.45);
+    }
+    .btn-secondary:hover {
+      background: rgba(247, 238, 221, 0.12);
+      border-color: rgba(247, 238, 221, 0.8);
+      transform: translateY(-2px);
+    }
+
+    .submit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .submit-meta {
+      font-size: 0.95rem;
+      color: rgba(247, 238, 221, 0.55);
+    }
+
+    /* Footer */
+    footer {
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      background: var(--cream-deep);
+      position: relative;
+      z-index: 1;
+    }
+    footer a { color: var(--terracotta-deep); }
+
+    @media (max-width: 760px) {
+      .hero { padding: 4rem 1.3rem 3rem; }
+      section { padding: 2.5rem 1.3rem; }
+      .about, .call, .ease, .submit { padding: 3.5rem 1.3rem; }
+      .mast { box-shadow: 6px 6px 0 var(--terracotta); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="cowzine.html" class="brand" aria-label="Back to home">← CowZine / MOOWS</a>
+      <div style="display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap;">
+        <a href="fest.html" class="nav-cta" style="background:transparent;color:var(--ink);border:1.5px solid rgba(44,31,36,0.25);">Mooncow Fest →</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbtSj5vwMUhzg4j2TeImbQgCUop8iOLMk1wkGHFbNAmcXoRg/viewform?usp=sharing&ouid=104329538921907973168" class="nav-cta" target="_blank" rel="noopener">Submit ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="eyebrow">~ a community zine, in the making ~</div>
+      <div class="mast">CowZine<span class="bang">!</span></div>
+      <p class="hero-lead">A paper-and-ink hideout for the herd's thoughts, sketches, gossip, and grievances. We're putting together issue zero. We want your stuff.</p>
+    </section>
+
+    <section class="about">
+      <div class="about-inner">
+        <span class="section-label">~ what is this? ~</span>
+        <h2>A zine by, for, and about the cows.</h2>
+        <p class="lead">CowZine is a small printed-and-stapled (or beautifully photocopied) creature put together by the people who come to Mooncow Fest, and anyone else hanging around the herd. It's part-newspaper, part-art-mag, part-yearbook, part-classifieds. There's no theme, no party line, and no editorial committee — just a deadline and a pile of pages waiting to be filled.</p>
+      </div>
+    </section>
+
+    <section class="call">
+      <div class="call-inner">
+        <span class="section-label">~ open call ~</span>
+        <h2>Pitch us anything.</h2>
+        <p class="lead">We're especially looking for the things below — but if you've got a wilder idea, even better. Words, drawings, photos, scraps, half-finished thoughts. Everything's on the table.</p>
+
+        <div class="call-grid">
+          <div class="pitch">
+            <div class="pitch-stamp">no. 01</div>
+            <div class="pitch-name">Personals</div>
+            <p class="pitch-desc">Missed connections, dating ads, romantic confessions, lonely-hearts mail.</p>
+          </div>
+          <div class="pitch">
+            <div class="pitch-stamp">no. 02</div>
+            <div class="pitch-name">Letters to the editor</div>
+            <p class="pitch-desc">Rants, raves, gentle disagreements, fan mail, anonymous complaints.</p>
+          </div>
+          <div class="pitch">
+            <div class="pitch-stamp">no. 03</div>
+            <div class="pitch-name">Opinion pieces</div>
+            <p class="pitch-desc">A hill you'd like to die on. Defend it, attack it, plant a flag.</p>
+          </div>
+          <div class="pitch">
+            <div class="pitch-stamp">no. 04</div>
+            <div class="pitch-name">Reviews</div>
+            <p class="pitch-desc">A book, a film, a sandwich, a friend's haircut. Stars optional.</p>
+          </div>
+          <div class="pitch">
+            <div class="pitch-stamp">no. 05</div>
+            <div class="pitch-name">Sketches & illustrations</div>
+            <p class="pitch-desc">Doodles, comics, portraits, marginalia. Black and white reproduces best.</p>
+          </div>
+          <div class="pitch">
+            <div class="pitch-stamp">no. 06</div>
+            <div class="pitch-name">Travel articles</div>
+            <p class="pitch-desc">A place you went. A place you wish you'd gone. A walk around your block.</p>
+          </div>
+          <div class="pitch">
+            <div class="pitch-stamp">no. 07</div>
+            <div class="pitch-name">News & investigative journalism</div>
+            <p class="pitch-desc">Tell us something true. Local, niche, or improbable. Bring receipts.</p>
+          </div>
+          <div class="pitch">
+            <div class="pitch-stamp">no. 08</div>
+            <div class="pitch-name">Crosswords & puzzles</div>
+            <p class="pitch-desc">Cryptics, sudokus, mazes, riddles, wordsearches, dingbats. The weirder the better.</p>
+          </div>
+          <div class="pitch">
+            <div class="pitch-stamp">no. 09</div>
+            <div class="pitch-name">Art & photography</div>
+            <p class="pitch-desc">Photos, prints, collages, accidental double exposures. If it lives on a fridge door, it belongs here. Black and white photocopies beautifully.</p>
+          </div>
+          <div class="pitch">
+            <div class="pitch-stamp">no. 10</div>
+            <div class="pitch-name">Sports</div>
+            <p class="pitch-desc">Match reports, hot takes, dramatic retellings of the 2026 CowZine egg-and-spoon race. All sports considered. Yes, including darts.</p>
+          </div>
+          <div class="pitch">
+            <div class="pitch-stamp">no. 11</div>
+            <div class="pitch-name">Advertisements</div>
+            <p class="pitch-desc">Got something to sell, swap, or shout about? Write your own ad. Classifieds, display, or a full-page spread. Rates negotiable (we accept vibes).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ease">
+      <div class="ease-inner">
+        <span class="section-label">~ no pressure ~</span>
+        <h2>Half an idea? Perfect.</h2>
+        <p class="lead">You don't need a finished, polished, ready-to-print piece. A scribble on a napkin, a vague thought, a "wouldn't it be funny if…" — all very welcome. Tell us what you're thinking and we'll happily help shape it into something page-ready.</p>
+        <div class="reassure">
+          <strong>Genuinely:</strong> bring us the rough stuff. We love a half-baked idea, and we're more than happy to brainstorm, edit, illustrate, or gently nudge it over the finish line with you. No idea is too small or too silly. 🐮
+        </div>
+
+        <div class="deadlines">
+          <div class="deadline">
+            <div class="deadline-stamp">Step one · pitch us</div>
+            <div class="deadline-date">July 15th</div>
+            <p class="deadline-desc">Initial idea deadline. Send us your idea — finished or not — so we can plan the issue and start helping you build it out.</p>
+          </div>
+          <div class="deadline">
+            <div class="deadline-stamp">Step two · the goods</div>
+            <div class="deadline-date">August 1st</div>
+            <p class="deadline-desc">Final article / artwork deadline. Everything in by this date so we can lay it all out, photocopy, staple, and unleash issue zero.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="submit">
+      <div class="submit-inner">
+        <span class="section-label" style="color: var(--rose);">~ submit ~</span>
+        <h2>Got an idea? Send it our way.</h2>
+        <p class="lead">Pitch a rough thought, drop us a finished piece, or just say hi. We'll write back with deadlines, formats, and friendly encouragement.</p>
+        <div class="submit-actions">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbtSj5vwMUhzg4j2TeImbQgCUop8iOLMk1wkGHFbNAmcXoRg/viewform?usp=sharing&ouid=104329538921907973168" class="btn btn-primary" target="_blank" rel="noopener">Submit your idea ↗</a>
+          <a href="mailto:theherd@moonco.ws?subject=CowZine submission" class="btn btn-secondary">Email the editors</a>
+        </div>
+        <p class="submit-meta">or write to theherd@moonco.ws</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CowZine is a project of <a href="/">the Mooncow herd</a>. Made by the herd, for the herd.</p>
+  </footer>
+
+</body>
+</html>
