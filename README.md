@@ -123,3 +123,12 @@ or italic formatting. For example:
 HTTP, HTTPS, email (`mailto:`), relative paths and `#anchor` links are supported.
 Links open in the same tab. Relative paths are resolved from the article's URL.
 Inline code stays literal. Link titles and reference-style links are not supported.
+
+### Article design
+
+Article titles use locally hosted Fraunces (open-source Hatton alternative), with
+Darker Grotesque body text. Font licenses live alongside the fonts in
+`assets/moows/fonts/`. Each article slug seeds a unique, repeatable SVG pattern
+with circles, rectangles and rotated semicircles. The builder creates these in
+`assets/moows/issue-01/patterns/`. Shared styles are in `article-design.css`;
+`article.js` moves the pattern at one quarter scroll speed and respects reduced motion.

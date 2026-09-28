@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1200 14369">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ecd099;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+  <g>
+    <g id="Layer_1">
+      <rect class="cls-1" x="478.5" y="1701.5" width="387.5" height="555"/>
+      <rect class="cls-1" x="174" y="1145.5" width="540" height="357.5"/>
+      <circle class="cls-1" cx="850" cy="391.9" r="250"/>
+      <rect class="cls-1" x="788.5" y="2476.5" width="320" height="555"/>
+      <path class="cls-1" d="M185,3611c0-102.2,82.8-185,185-185s185,82.8,185,185H185Z"/>
+      <rect class="cls-1" x="340" y="4379.5" width="410" height="325"/>
+      <circle class="cls-1" cx="899" cy="5417" r="240"/>
+      <circle class="cls-1" cx="322" cy="6321" r="247.5"/>
+      <rect class="cls-1" x="589" y="7012.5" width="340" height="382.5"/>
+      <rect class="cls-1" x="230.5" y="7688" width="240" height="420"/>
+      <circle class="cls-1" cx="376" cy="8654" r="230"/>
+      <path class="cls-1" d="M1228,9577c0,140.8-114.2,255-255,255s-255-114.2-255-255h510Z"/>
+      <circle class="cls-1" cx="707" cy="10269" r="167.5"/>
+      <path class="cls-1" d="M540,11145c-107.7,0-195-87.3-195-195s87.3-195,195-195v390Z"/>
+      <circle class="cls-1" cx="604" cy="11675" r="197.5"/>
+      <path class="cls-1" d="M265.5,12521c0-142.2,115.3-257.5,257.5-257.5s257.5,115.3,257.5,257.5H265.5Z"/>
+      <path class="cls-1" d="M189.5,13226c0-142.2,115.3-257.5,257.5-257.5s257.5,115.3,257.5,257.5H189.5Z"/>
+      <path class="cls-1" d="M940,13694c151.9,0,275,123.1,275,275s-123.1,275-275,275v-550Z"/>
+    </g>
+  </g>
+</svg>

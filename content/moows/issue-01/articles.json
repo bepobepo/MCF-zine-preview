@@ -122,7 +122,7 @@
   {
     "title": "How to make a rave",
     "slug": "how-to-make-a-rave",
-    "author": "Hackney Out-of-Hours Noise Team (Mads M & Marcel K)",
+    "author": "Hackney Out-of-Hours Noise Team",
     "pages": [
       8,
       9,
@@ -748,42 +748,6 @@
       },
       {
         "type": "image",
-        "src": "p14-03.jpg",
-        "caption": "From the printed edition · page 14",
-        "page": 14
-      },
-      {
-        "type": "image",
-        "src": "p14-02.jpg",
-        "caption": "From the printed edition · page 14",
-        "page": 14
-      },
-      {
-        "type": "image",
-        "src": "p14-06.jpg",
-        "caption": "From the printed edition · page 14",
-        "page": 14
-      },
-      {
-        "type": "image",
-        "src": "p14-05.jpg",
-        "caption": "From the printed edition · page 14",
-        "page": 14
-      },
-      {
-        "type": "image",
-        "src": "p14-08.jpg",
-        "caption": "From the printed edition · page 14",
-        "page": 14
-      },
-      {
-        "type": "image",
-        "src": "p14-04.jpg",
-        "caption": "From the printed edition · page 14",
-        "page": 14
-      },
-      {
-        "type": "image",
         "src": "p75-02.jpg",
         "caption": "From the printed edition · page 75",
         "page": 75
@@ -795,7 +759,7 @@
   {
     "title": "Burning with the herd",
     "slug": "burning-with-the-herd",
-    "author": "Francois M; artwork by Daria Z",
+    "author": "Francois M",
     "pages": [
       20,
       21
@@ -873,25 +837,19 @@
         "src": "p20-02.jpg",
         "caption": "From the printed edition · page 20",
         "page": 20
-      },
-      {
-        "type": "image",
-        "src": "p21-01.jpg",
-        "caption": "Artwork by Daria Z · page 21",
-        "page": 21
       }
     ],
     "ocr": "not-required",
     "extra": false
   },
   {
-    "title": "Moon Art",
-    "slug": "moon-art",
-    "author": "Daria Z",
+    "title": "Moon Cow Art",
+    "slug": "moon-cow-art",
+    "author": "Daria Z, Lucy O",
     "pages": [
       21
     ],
-    "description": "Moon art.",
+    "description": "Moon Cow art.",
     "blocks": [
       {
         "type": "image",
@@ -1589,16 +1547,16 @@
         "poetry": true
       },
       {
-        "type": "image",
-        "src": "p33-01.jpg",
-        "caption": "From the printed edition · page 33",
-        "page": 33
-      },
-      {
         "type": "paragraph",
         "text": "**Tudoro le**",
         "page": 33,
         "poetry": true
+      },
+      {
+        "type": "image",
+        "src": "p33-02.jpg",
+        "caption": "From the printed edition · page 33",
+        "page": 33
       },
       {
         "type": "paragraph",
@@ -1625,16 +1583,16 @@
         "poetry": true
       },
       {
-        "type": "image",
-        "src": "p33-02.jpg",
-        "caption": "From the printed edition · page 33",
-        "page": 33
-      },
-      {
         "type": "paragraph",
         "text": "**Shephers are striking the trough**",
         "page": 33,
         "poetry": true
+      },
+      {
+        "type": "image",
+        "src": "p33-01.jpg",
+        "caption": "From the printed edition · page 33",
+        "page": 33
       },
       {
         "type": "paragraph",

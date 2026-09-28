@@ -1,7 +1,7 @@
 """Build the MOOWS article pages from reviewed, editable JSON. No dependencies."""
 from pathlib import Path
 from html import escape
-import json,re
+import json,re,random
 ROOT=Path(__file__).resolve().parents[1]
 ARTICLES=json.loads((ROOT/'content/moows/issue-01/articles.json').read_text(encoding='utf-8'))
 PREFIX='../../../'
@@ -78,6 +78,7 @@ def render(a,index):
   body.append(f'<{tag}{attrs}>{t}</{tag}>')
  prev=ARTICLES[index-1] if index>0 else None;following=ARTICLES[index+1] if index+1<len(ARTICLES) else None
  neighbors=''.join(f'<a href="../{x["slug"]}/"><small>{label}</small>{escape(x["title"])}</a>' for x,label in [(prev,'← Previous piece'),(following,'Next piece →')] if x)
+ top_neighbors=''.join(f'<a class="button" href="../{x["slug"]}/" title="{escape(x["title"],quote=True)}">{label}</a>' if x else f'<span class="button" aria-disabled="true">{label}</span>' for x,label in [(prev,'← Previous'),(following,'Next →')])
  author=f'<span>{escape(a["author"])}</span> · ' if a['author'] else ''
  labels=', '.join(map(str,pages))
  print_meta=f'<a href="../read/#page={pages[0]}">Printed pages {labels}</a>' if pages else 'Web-only article'
@@ -93,11 +94,13 @@ def render(a,index):
 <meta property="og:description" content="{escape(desc)}"><meta property="og:url" content="{url}">
 <meta property="og:image" content="{social}"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../../../assets/moows/moows.css?v=6">
+<link rel="stylesheet" href="../../../assets/moows/article-design.css?v=5">
 </head>
-<body>
+<body class="article-page">
+<div class="article-background" style="background-image:url('../../../assets/moows/issue-01/patterns/{a["slug"]}.svg?v=4')" aria-hidden="true"></div>
 <a class="skip" href="#main">Skip to content</a>
 <header><a class="brand" href="../../../cowzine.html">MOOWS</a><nav aria-label="Main navigation"><a href="../../../index.html">The herd</a><a href="../../../cowzine.html#contents">Issue 1</a><a href="../../../cowzine-submit.html">Contribute</a></nav></header>
-<main id="main" class="article"><article>
+<main id="main" class="article"><nav class="article-top-nav" aria-label="Article navigation">{top_neighbors}</nav><article>
 <p class="eyebrow"><a href="../../../cowzine.html#contents">MOOWS / Issue 01</a> · August 2026</p>
 <h1>{escape(title)}</h1>
 <p class="article-meta">{author}{print_meta}</p>
@@ -105,9 +108,31 @@ def render(a,index):
 <div class="actions"><a class="button" href="../../../cowzine.html#contents">Back to contents</a>{print_action}<button class="share-article" type="button" hidden>Share this piece ↗</button><span class="share-status" role="status"></span></div>
 </article><nav class="article-neighbors" aria-label="Other articles">{neighbors}</nav></main>
 <footer>MOOWS / CowZine · By mooncows, for mooncows. <a href="../../../cowzine-submit.html">Make the next issue with us →</a></footer>
-<script src="../../../assets/moows/article.js" defer></script>
+<script src="../../../assets/moows/article.js?v=4" defer></script>
 </body></html>'''
+def article_pattern(slug):
+ """Stable random arrangement: each article keeps its own composition."""
+ rng=random.Random(slug)
+ kinds=['circle','rectangle','semicircle']*6
+ rng.shuffle(kinds)
+ shapes=[]; y=350
+ for i,kind in enumerate(kinds):
+  x=rng.randint(220,980)
+  if i: y+=rng.randint(680,960)
+  radius=rng.randint(65,115)
+  if kind=='circle': shape=f'<circle r="{radius}"/>'
+  elif kind=='rectangle': shape=f'<rect x="-{radius}" y="-55" width="{radius*2}" height="{rng.randint(90,165)}"/>'
+  else: shape=f'<path d="M-{radius} 0a{radius} {radius} 0 0 1 {radius*2} 0Z"/>'
+  angle=rng.choice([0,90,180,270])
+  shapes.append(f'<g transform="translate({x} {y}) rotate({angle}) scale(2.5)">{shape}</g>')
+ height=y+400
+ return f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{height}" viewBox="0 0 1200 {height}"><g fill="#ECD099">'+''.join(shapes)+'</g></svg>'
+
 def build():
+ patterns=ROOT/"assets/moows/issue-01/patterns"
+ patterns.mkdir(parents=True,exist_ok=True)
+ (patterns/"issue-landing.svg").write_text(article_pattern("issue-01-landing"),encoding="utf-8")
+ for a in ARTICLES: (patterns/(a["slug"]+".svg")).write_text(article_pattern(a["slug"]),encoding="utf-8")
  mapping=[{k:a[k] for k in ("title","slug","pages")} for a in ARTICLES if a.get("pages")]
  (ROOT/"assets/moows/issue-01/articles.js").write_text("window.moowsArticles = "+json.dumps(mapping,ensure_ascii=False)+";\n",encoding="utf-8")
  for i,a in enumerate(ARTICLES):

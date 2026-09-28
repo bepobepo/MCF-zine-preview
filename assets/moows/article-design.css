@@ -1,0 +1,31 @@
+@font-face { font-family: "Darker Grotesque"; src: url("fonts/DarkerGrotesque.ttf") format("truetype"); font-weight: 300 900; font-style: normal; font-display: swap; }
+@font-face { font-family: Fraunces; src: url("fonts/Fraunces.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
+body.article-page { --paper: #fff; background: #fff; color: #20201d; isolation: isolate; }
+.article-background { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: url("article-pattern.svg") center top / 1200px auto repeat-y; opacity: .65; will-change: background-position; }
+.article-page .prose { font-family: "Darker Grotesque", Arial, sans-serif; font-size: 23px; font-weight: 500; line-height: 1.45; }
+.article-page .prose strong { font-weight: 750; }
+.article-page .article h1 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-variation-settings: "opsz" 72, "SOFT" 0, "WONK" 1; letter-spacing: -.035em; line-height: 1.1; }
+.article-page .prose h2, .article-page .article-neighbors a { font-family: Fraunces, Georgia, serif; }
+.article-page .prose h2 { line-height: 1.2; }
+.article-page .article-figure figcaption { font-family: "Darker Grotesque", Arial, sans-serif; font-size: 17px; line-height: 1.3; }
+@media(max-width:700px) { .article-page .prose { font-size: 21px; } .article-background { background-size: 800px auto; opacity: .45; } }
+@media(prefers-reduced-motion:reduce) { .article-background { background-position-y: 0 !important; will-change: auto; } }
+@media print { .article-background { display: none; } }
+
+.article-top-nav { display: flex; justify-content: space-between; gap: 16px; margin: 0 0 32px; font: 16px/1.6 Arial, sans-serif; }
+.article-top-nav [aria-disabled="true"] { opacity: .35; cursor: default; }
+.cowzine-landing main { font-family: "Darker Grotesque", Arial, sans-serif; font-size: 23px; line-height: 1.45; font-weight: 500; }
+.cowzine-landing h1, .cowzine-landing h2, .cowzine-landing h3, .cowzine-landing .hero .lead, .cowzine-landing .contents .number { font-family: Fraunces, Georgia, serif; }
+.cowzine-landing .hero h1 { font-weight: 600; font-variation-settings: "opsz" 72, "SOFT" 0, "WONK" 1; }
+.cowzine-landing .button { font: 16px/1.6 Arial, sans-serif; }
+.cowzine-landing .contents small { font: 12px/1.6 Arial, sans-serif; }
+@media(max-width:700px) { .cowzine-landing main { font-size: 21px; } }
+
+body.reader-page { --paper: #fff; background: #fff; color: #20201d; font-family: "Darker Grotesque", Arial, sans-serif; font-size: 20px; font-weight: 500; }
+.reader-page .reader, .reader-page .reader:fullscreen { background: #fff; }
+.reader-page .brand, .reader-page h1, .reader-page h2 { font-family: Fraunces, Georgia, serif; }
+.reader-page .button, .reader-page button, .reader-page input { font-family: "Darker Grotesque", Arial, sans-serif; }
+.reader-page .hint { font-size: 17px; }
+
+.reader-page .page-arrow { display: grid; place-items: center; line-height: 1; }
+.reader-page .page-arrow svg { display: block; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
